@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Application de gestion de portefeuille de dépenses">
+    <title>Portefeuille de Dépenses</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="board">
+            <h2>MON PORTFEUILLE</h2>
+            <div class="amount">
+                <h3>Solde principale</h3>
+                <div class="montant">
+                    <span id="montant"> 0</span>
+                    <p>$</p>
+                </div>
+            </div>
+            <div class="action">
+                <button id="add">ajouter</button>
+                <button id="reset">reinitialiser</button>
+            </div>
+            <h3>historique</h3>
+            <span id="resultat-supp"></span>
+            <div class="historique">
+                <div class="table">
+                    <table>
+                        <tr>
+                            <td>id </td>
+                            <td>titre</td>
+                            <td>Montant</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- Le fond noir semi-transparent qui prend tout l'écran -->
+            <div id="monPopup" class="popup-overlay">
+                <!-- La boîte blanche du pop-up -->
+                <div class="popup-contenu">
+                    <h2>Ajouter une dépense</h2>
+                    <div class="input-group2">
+                        <input type="text" id="text" placeholder="Titre (ex: Courses)">
+                        <input type="number" id="number" placeholder="Montant (ex: 50)">
+                    </div>
+
+                    <div class="popup-actions">
+                        <button id="btnValider">Valider</button>
+                        <button id="btnFermer">Annuler</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Contenu à venir -->
+
+    <script src="../static/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* La police d'écriture a été ajoutée dans l'HTML */
+    font-family: 'Poppins', sans-serif;
+    background-color: #0c1736;
+    /* Une couleur de fond plus douce au lieu d'un rouge agressif (#da2121) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff;
+}
+
+/* ===== Ton style ici ===== */
+.container {
+    width: 100%;
+    max-width: 120vh;
+    max-height: 1000vh;
+    /* Limite la largeur pour une meilleure lisibilité */
+}
+
+.board {
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background-color: rgb(9, 8, 39);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.montant {
+    display: flex;
+    margin-top: 20px;
+    background-color: ;
+    border-radius: 10px;
+    border: 1px solid #d9d9d9;
+    padding: 60px;
+    text-align: start;
+    font-size: 40px;
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.action button {
+    padding: 10px;
+    background-color: rgb(237, 55, 55);
+    color: white;
+    border: none;
+    border: 1px solid black;
+    border-radius: 4px;
+
+}
+
+.action button:hover {
+    background-color: #c33636;
+    color: rgb(253, 253, 253);
+    transition: 0.3s ease-in;
+}
+
+.historique {
+    display: flex;
+
+    margin-top: -20px;
+    background-color: ;
+    border-radius: 10px;
+    border: 1px solid #aca5a5;
+
+}
+
+.board h3 {
+    text-align: start;
+}
+
+
+/* Le fond qui recouvre tout l'écran */
+.popup-overlay {
+    display: none;
+    /* CACHÉ PAR DÉFAUT ! */
+    position: fixed;
+    gap: 20px;
+    /* Reste fixe même si on scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 30, 30, 0.5);
+    /* Noir semi-transparent */
+    z-index: 1000;
+    /* Assure d'être au-dessus de tout le reste */
+
+    /* Pour centrer la boîte blanche au milieu de l'écran */
+    justify-content: center;
+    align-items: center;
+
+}
+
+.input-group2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.popup-contenu input {
+    padding: 5px;
+    margin-bottom: 10px;
+
+}
+
+.popup-actions {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.popup-actions button {
+    padding: 10px;
+    background-color: rgb(233, 65, 65);
+    color: white;
+    border: none;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.popup-actions button:hover {
+    background-color: #c33636;
+    color: rgb(253, 253, 253);
+    transition: 0.3s ease-in;
+
+}
+
+/* La petite boîte blanche au milieu */
+.popup-contenu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-contenu h2 {
+    color: black;
+}
+
+.historique .table {
+    margin-top: 20px;
+    width: 100%;
+
+}
+
+.table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+
+}
+
+.table tr td {
+    padding: 8px 12px;
+    color: #333;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    color: #ffffff;
+}
+
+.table tr:first-child td {
+    font-weight: 700;
+    color: #e63946;
+    border-bottom: 2px solid #e63946;
+}
