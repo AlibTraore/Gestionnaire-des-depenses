@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Application de gestion de portefeuille de dépenses">
     <title>Portefeuille de Dépenses</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
@@ -22,6 +22,7 @@
             </div>
             <div class="action">
                 <button id="add">ajouter</button>
+                <button id="retirer">retirer</button>
                 <button id="reset">reinitialiser</button>
             </div>
             <h3>historique</h3>
@@ -33,14 +34,14 @@
                             <td>id </td>
                             <td>titre</td>
                             <td>Montant</td>
-                            <td></td>
+                            <td>date</td>
                             <td></td>
                         </tr>
                     </table>
                 </div>
 
             </div>
-
+            <!--Ceci est le popup permettant d'ajouter des montants a notre portfeuille -->
             <!-- Le fond noir semi-transparent qui prend tout l'écran -->
             <div id="monPopup" class="popup-overlay">
                 <!-- La boîte blanche du pop-up -->
@@ -63,7 +64,7 @@
 
     <!-- Contenu à venir -->
 
-    <script src="../static/main.js"></script>
+    <script src="/static/main.js"></script>
 </body>
 
 </html>

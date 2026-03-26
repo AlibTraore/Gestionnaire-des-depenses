@@ -20,14 +20,14 @@ body {
 /* ===== Ton style ici ===== */
 .container {
     width: 100%;
-    max-width: 120vh;
+    max-width: 140vh;
     max-height: 1000vh;
     /* Limite la largeur pour une meilleure lisibilité */
 }
 
 .board {
     border-radius: 12px;
-    padding: 30px;
+    padding: 40px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     background-color: rgb(9, 8, 39);
     text-align: center;
@@ -39,7 +39,7 @@ body {
 .montant {
     display: flex;
     margin-top: 20px;
-    background-color: ;
+
     border-radius: 10px;
     border: 1px solid #d9d9d9;
     padding: 60px;
@@ -73,7 +73,7 @@ body {
     display: flex;
 
     margin-top: -20px;
-    background-color: ;
+
     border-radius: 10px;
     border: 1px solid #aca5a5;
 
@@ -148,7 +148,8 @@ body {
     background-color: rgb(255, 255, 255);
     padding: 30px;
     border-radius: 10px;
-    width: 300px;
+    width: 400px;
+    height: 250px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

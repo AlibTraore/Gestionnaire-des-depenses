@@ -1,0 +1,57 @@
+================================================================
+  SUIVI DES MODIFICATIONS — Portefeuille de depenses
+  Derniere mise a jour : 26 mars 2026
+================================================================
+
+
+----------------------------------------------------------------
+  CORRECTIONS APPLIQUEES — Session du 26 mars 2026
+----------------------------------------------------------------
+
+[app.py] Validation des données entrantes
+  Le serveur vérifie maintenant si le titre est rempli et si le
+  montant est valide (numérique et positif).
+  STATUT : corrigé
+
+[app.py] debug=True désactivé
+  Le mode debug est passé à False par sécurité.
+  STATUT : corrigé
+
+[main.js] Gestion des erreurs (Alertes)
+  Le frontend affiche maintenant des messages d'erreur clairs
+  quand la validation serveur échoue.
+  STATUT : corrigé
+
+[main.js] Correction bug bouton reset
+  Syntaxe corrigée (retrait du point dans getElementById).
+  STATUT : corrigé
+
+[Depense.py] Fichier supprimé
+  L'ancien brouillon obsolète a été retiré pour nettoyer le projet.
+  STATUT : supprimé
+
+[requirements.txt] Fichier nettoyé
+  Liste des dépendances limitée au strict nécessaire (Flask, Flask-Cors).
+  STATUT : mis à jour
+
+
+----------------------------------------------------------------
+  CORRECTIONS DEJA APPLIQUEES — Session du 22 mars 2026
+----------------------------------------------------------------
+
+[index.html] Lien CSS et JS ( Flask static )
+  STATUT : corrigé
+
+[app.py] Enregistrement de la date
+  STATUT : corrigé
+
+[app.py] Chemin absolu DB_PATH
+  STATUT : corrigé
+
+[main.js] Affichage de la date dans le tableau
+  STATUT : corrigé
+
+[main.js] Conflit de listeners sur btnValider
+  STATUT : corrigé
+
+================================================================

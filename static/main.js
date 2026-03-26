@@ -2,19 +2,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Application chargée ✅');
     afficherSolde();
-    modal()
-    fermerModal()
-    envoyerModal()
+    modal();
     afficherHistorique();
 });
 const solde = document.getElementById('montant')
 const popUp = document.querySelector('.popup-overlay')
 const ajouter = document.getElementById('add')
 document.getElementById('.reset')
-
 const nameTitle = document.getElementById('text')
 const nameNumber = document.getElementById('number')
-
+const texteAction = document.querySelector('.popup-contenu h2')
 async function afficherSolde() {
     try {
         const response = await fetch('/afficher')
@@ -27,21 +24,38 @@ async function afficherSolde() {
 
 };
 function modal() {
+    let mode = ''
     ajouter.addEventListener('click', () => {
+        mode = 'ajouter'
         popUp.style.display = 'flex'
         console.log(popUp)
     })
-}
-function fermerModal() {
+
+    document.getElementById('retirer').addEventListener('click', () => {
+        mode = 'retirer'
+        texteAction.textContent = 'Retirer une depense'
+        popUp.style.display = 'flex'
+        console.log(mode)
+    })
+
+    // Un seul listener sur btnValider — pas de conflit !
+    document.getElementById('btnValider').addEventListener('click', () => {
+        if (mode === 'ajouter') {
+            ajouterMontant()
+        } else {
+
+            console.log(popUp)
+            retirerSolde()
+        }
+    })
+
     document.getElementById('btnFermer').addEventListener('click', () => {
         popUp.style.display = 'none'
+        mode = ''
     })
 }
-function envoyerModal() {
-    document.getElementById('btnValider').addEventListener('click', () => {
-        ajouterMontant()
-    })
-}
+
+
 
 async function ajouterMontant() {
     try {
@@ -52,7 +66,7 @@ async function ajouterMontant() {
             },
             body: JSON.stringify({
                 champTitle: nameTitle.value,
-                champNumber: nameNumber.value
+                champNumber: +parseFloat(nameNumber.value)
             })
         });
         location.reload()
@@ -77,13 +91,41 @@ async function afficherHistorique() {
 
             cellId.textContent = element.id;
             cellTitre.textContent = element.titre;
-            cellMontant.innerHTML = `${element.montant} $`;
+            if (element.montant < 0) {
+                cellMontant.innerHTML = `<span style="color:#e74c3c">${element.montant} $</span>`;
+            } else {
+                cellMontant.innerHTML = `<span style="color:#2ecc71">+${element.montant} $</span>`;
+            }
+            cellDate.textContent = element.date;
             cellDelete.innerHTML = `<button class='btn-supprimer' onclick = 'retirerSomme(${element.id})'>🗑️</button>`;
         }
     } catch (error) {
         console.error('un probleme', error)
     }
 
+}
+
+
+async function retirerSolde() {
+
+    try {
+        const response = await fetch("/retirerSolde", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                champTitle: nameTitle.value,
+                champNumber: -parseFloat(nameNumber.value)
+
+            })
+
+        });
+        console.log(nameNumber.value)
+
+    } catch (error) {
+        console.log("un probleme", error)
+    }
 }
 
 async function retirerSomme(element) {
@@ -100,7 +142,8 @@ async function retirerSomme(element) {
         });
         const resultat = await response.json();
         document.getElementById('resultat-supp').textContent = resultat.resultat
-        location.reload()
+        location.reload();
+
     } catch (error) {
         console.log("un probleme", error)
     }
